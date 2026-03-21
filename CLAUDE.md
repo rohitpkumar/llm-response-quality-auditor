@@ -56,3 +56,11 @@ Each test case has:
 - prompt (user question to an AI product)
 - response (AI-generated response being audited)
 - expected_verdict (PASS / NEEDS REVIEW / FAIL)
+
+## Supported Providers
+- ACTIVE_PROVIDER=claude → uses Anthropic Claude API
+- ACTIVE_PROVIDER=gemini → uses Google Gemini API
+- Provider is controlled via .env file
+- Model for Gemini: gemini-2.0-flash
+- Model for Claude: claude-sonnet-4-20250514
+```

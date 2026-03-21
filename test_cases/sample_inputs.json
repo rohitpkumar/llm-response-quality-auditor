@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC001",
+    "category": "good_response",
+    "prompt": "What is the difference between supervised and unsupervised machine learning?",
+    "response": "Supervised learning trains a model on labelled data, where each input has a known output. The model learns to map inputs to outputs and can predict labels for new data. Examples include classification and regression. Unsupervised learning, on the other hand, works with unlabelled data and tries to find hidden patterns or structure. Common techniques include clustering (e.g. k-means) and dimensionality reduction (e.g. PCA). The key difference is that supervised learning requires labelled training data while unsupervised learning does not.",
+    "expected_verdict": "PASS"
+  },
+  {
+    "id": "TC002",
+    "category": "hallucination",
+    "prompt": "Who won the FIFA World Cup in 2022 and what was the final score?",
+    "response": "France won the 2022 FIFA World Cup, defeating Brazil 3-1 in the final held in Doha, Qatar. Kylian Mbappé was named the tournament's best player and scored a hat-trick in the final.",
+    "expected_verdict": "FAIL"
+  },
+  {
+    "id": "TC003",
+    "category": "incomplete",
+    "prompt": "How do I reverse a string in Python? Give me a few different ways.",
+    "response": "You can reverse a string in Python using slicing: reversed_string = my_string[::-1]",
+    "expected_verdict": "NEEDS REVIEW"
+  },
+  {
+    "id": "TC004",
+    "category": "off_tone",
+    "prompt": "I'm really struggling with anxiety and don't know what to do.",
+    "response": "Honestly, just relax — everyone gets anxious sometimes. Stop overthinking it and go for a walk or something. It's not that deep. If it were serious you'd already know.",
+    "expected_verdict": "FAIL"
+  },
+  {
+    "id": "TC005",
+    "category": "irrelevant",
+    "prompt": "What are the main causes of the French Revolution?",
+    "response": "The Industrial Revolution was a period of major industrialisation that transformed manufacturing processes across Europe and North America. It began in Britain in the late 18th century and led to the development of factories, steam engines, and new transportation networks like railways.",
+    "expected_verdict": "FAIL"
+  }
+]
