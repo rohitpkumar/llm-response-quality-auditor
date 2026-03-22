@@ -66,6 +66,33 @@ RECOMMENDATION : Response should be fact-checked before production use.
 
 ---
 
+## 📈 Results
+
+5 real-world test scenarios executed covering:
+- ✅ Good response (expected: PASS)
+- ❌ Hallucination response (expected: FAIL)
+- ⚠️ Incomplete response (expected: NEEDS REVIEW)
+- ❌ Off-tone response (expected: FAIL)
+- ❌ Irrelevant response (expected: FAIL)
+
+| Test Case | Category | Score | Verdict | Expected | Match |
+|---|---|---|---|---|---|
+| TC001 | Good Response | 9.5/10 | PASS | PASS | ✓ |
+| TC002 | Hallucination | 7.5/10 | NEEDS REVIEW | FAIL | ✗ |
+| TC003 | Incomplete | 7.75/10 | NEEDS REVIEW | NEEDS REVIEW | ✓ |
+| TC004 | Off-tone | 3.5/10 | FAIL | FAIL | ✓ |
+| TC005 | Irrelevant | 4.5/10 | FAIL | FAIL | ✓ |
+
+**4 out of 5 verdicts matched expected outcomes on first run.**
+
+> TC002 returned NEEDS REVIEW instead of FAIL — highlighting that 
+> hallucination detection requires nuance, not binary scoring. The 
+> response contained some valid information mixed with unverifiable 
+> claims. This finding led to refinement of the hallucination risk 
+> evaluation dimension.
+
+---
+
 ## 🗂️ Project Structure
 ```
 llm-response-quality-auditor/
@@ -126,6 +153,22 @@ python run_audit.py
 | **Claude API** | Powers the evaluation engine inside the auditor |
 | **Python** | Core language |
 | **Promptfoo** | Inspiration for evaluation framework design |
+
+---
+
+## 📈 How I Built This (AI-Native Workflow)
+
+This project was built entirely using **Claude Code** as an AI coding agent:
+
+1. Created `CLAUDE.md` — a project briefing file giving Claude Code 
+   full context about the project before writing any code
+2. Used short, precise prompts to generate each file — Claude Code 
+   read CLAUDE.md automatically so no repeated context was needed
+3. Debugged API errors and provider switching entirely via Claude Code
+4. Iterated on evaluation dimensions based on real test run results
+
+> This is the same AI-native workflow used by engineering teams 
+> at AI-first companies today.
 
 ---
 
